@@ -21,7 +21,8 @@ console.log(hello,owu,com,ua,one,ten,minusNineHundredNinetyNine,oneTwoThree,pi,t
 let firstName = 'Orest';
 let lastName = 'Hanes';
 let middleName = 'Yaroslavovich';
-let person = lastName+' '+firstName+' '+middleName;
+// let person = lastName+' '+firstName+' '+middleName;
+let person = `${lastName} ${firstName} ${middleName}`
 console.log(person);
 
 // - За допомогою оператора typeof визначити типи наступних змінних та вивести їх в консоль.

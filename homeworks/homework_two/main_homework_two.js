@@ -207,17 +207,17 @@ let a = 789;
 let b = 789;
 if(a>b){
     console.log(a);
-}else if (b>a){
+}else if (b > a ){
     console.log(b);
 }else if (a === b){
-    console.log('equal')
+    console.log('equal');
 }else{
-    console.log('it`s not a number')
+    console.log('it`s not a number');
 }
 //     - є змінна х, яка може прийняти будь-яке значення (стрінг, число, undefined, null  і тд включно). Напишіть код який,
 //         буде присвоювати змінній х значення "default"  якщо ви намагаєтесь присвоїти в неї falsy-значення (хибноподібні, тобто ті, які приводиться до false, а це 0 null undefined і тд).
-  let anyMeaning = 'sdfgsd';
- if(anyMeaning === 0 || anyMeaning === null || anyMeaning === '' || anyMeaning === undefined || anyMeaning === false ){
+  let anyMeaning = 0;
+ if(!anyMeaning){
      anyMeaning = 'default';
      console.log(anyMeaning);
  }else {
@@ -342,3 +342,47 @@ let courses = [
     if (courses[5].monthDuration > 5){
     console.log(courses[5].title, 'supper');
     }
+
+
+console.log(courses);
+for (const course of courses) {
+    let modules = course.modules;
+    for (const module of modules) {
+        if(module === 'python advanced'){
+            console.log(course);
+        }
+    }
+}
+
+
+let users = [
+    {name: 'vasya', age: 31, status: false, gender:'male'},
+    {name: 'petya', age: 30, status: true ,gender:'male'},
+    {name: 'kolya', age: 29, status: true, gender:'male'},
+    {name: 'olya', age: 28, status: false, gender:'female'},
+    {name: 'max', age: 30, status: true, gender:'male'},
+    {name: 'anya', age: 31, status: false, gender:'female'},
+    {name: 'oleg', age: 28, status: false, gender:'male'},
+    {name: 'andrey', age: 29, status: true, gender:'male'},
+    {name: 'masha', age: 30, status: true, gender:'female'},
+    {name: 'olya', age: 31, status: false, gender:'female'},
+    {name: 'max', age: 31, status: true, gender:'male'}
+];
+//завдання "ТЦК", знайти ухилянтів
+for (const user of users) {
+    if(user.age >= 30 && user.status === true){
+        console.log(user);
+    }
+}
+//знайти ухилянта Максима
+for (const user of users) {
+    if(user.name === 'max'){
+        console.log(user,'опа,йдемо провіримо данні');
+    }
+}
+//їде маршрутка 40 зупиняємо і витягаємо всіх пациків
+for (const user of users) {
+    if (user.age >= 30 && user.status === true && user.gender === 'male'){
+        console.log(user,'ухилянти знайдені');
+    }
+}

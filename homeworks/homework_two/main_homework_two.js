@@ -136,7 +136,7 @@ const Weather = [
     middleDay:30,
     evening:22},
 ];
-
+console.log(Weather);
 
 
 // Логічні розгалуження:
@@ -155,6 +155,8 @@ if (x !== 0){
 // - Дано змінну time яка рівна числу від 0 до 59. Потрібно написати код, який перевірить, до якої четверті години попадає число
 let time = 45;
 // (в першу, другу, третю или четверту частину години).
+
+
 if (time >= 0 && time <= 15){
     console.log('1');
 }else if (time > 15 &&time <= 30){
@@ -167,14 +169,176 @@ if (time >= 0 && time <= 15){
     console.log('error')
 }
 
+
 // - У змінній day дано якесь число від 1 до 31. Потрібно визначити, у яку половину(декаду) місяця потрапляє це число (у першу, другу чи третю).
 // - Скласти розклад на тиждень за домопоги switch. Користувач вводить порядковий номер дня тижня і на екрані відображається інфа що заплановано на цей день (можна замість плану на день, назву дня англійською).
+let day = 'thursday';
+
+switch (day){
+    case 'monday':
+        console.log('doing homework');
+        break;
+    case 'tuesday':
+        console.log('playing pc');
+        break;
+    case 'wednesday':
+        console.log('working');
+        break;
+    case 'thursday':
+        console.log('go out with friends');
+        break;
+    case 'friday':
+        console.log('making some dishes');
+        break;
+    case 'saturday':
+        console.log('playing football');
+        break;
+    case 'sunday':
+        console.log('hanging around');
+        break;
+    default:
+        console.log('its not a day of the week');
+}
+
 //     - Користувач вводить або має два числа.
 //         Потрібно знайти та вивести максимальне число з тих двох .
 //         Також потрібно врахувати коли введені рівні числа.
-//
+let a = 789;
+let b = 789;
+if(a>b){
+    console.log(a);
+}else if (b>a){
+    console.log(b);
+}else if (a === b){
+    console.log('equal')
+}else{
+    console.log('it`s not a number')
+}
 //     - є змінна х, яка може прийняти будь-яке значення (стрінг, число, undefined, null  і тд включно). Напишіть код який,
 //         буде присвоювати змінній х значення "default"  якщо ви намагаєтесь присвоїти в неї falsy-значення (хибноподібні, тобто ті, які приводиться до false, а це 0 null undefined і тд).
-//
-//
+  let anyMeaning = 'sdfgsd';
+ if(anyMeaning === 0 || anyMeaning === null || anyMeaning === '' || anyMeaning === undefined || anyMeaning === false ){
+     anyMeaning = 'default';
+     console.log(anyMeaning);
+ }else {
+     console.log('hello world');
+ }
+
 //     - з файлу arrays.js (лежить в папці 2023 plan ) взяти масив coursesAndDurationArray. За допомоги іф перевірити кожен його елемент на тривалість навчання. У випадку якщо тривалість довша за 5 місяців вивести в консоль "Супер".
+
+let courses = [
+    {
+        title: 'JavaScript Complex',
+        monthDuration: 5,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'node.js'],
+        logo: '',
+        price: 0,
+        rating: 5,
+        avgResult: 99
+    },
+    {
+        title: 'Java Complex',
+        monthDuration: 6,
+        hourDuration: 909,
+        modules: ['html',
+            'css',
+            'js',
+            'mysql',
+            'mongodb',
+            'react',
+            'angular',
+            'aws',
+            'docker',
+            'git',
+            'java core',
+            'java advanced'],
+        logo: '',
+        price: 0,
+        rating: 4.998,
+        avgResult: 97
+    },
+    {
+        title: 'Python Complex',
+        monthDuration: 6,
+        hourDuration: 909,
+        modules: ['html',
+            'css',
+            'js',
+            'mysql',
+            'mongodb',
+            'react',
+            'angular',
+            'aws',
+            'docker',
+            'git',
+            'python core',
+            'python advanced'],
+        logo: '',
+        price: 0,
+        rating: 4.812,
+        avgResult: 98
+    },
+    {
+        title: 'QA Complex',
+        monthDuration: 4,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'QA/QC'],
+        logo: '',
+        price: 0,
+        rating: 4.65,
+        avgResult: 97
+    },
+    {
+        title: 'FullStack',
+        monthDuration: 7,
+        hourDuration: 909,
+        modules: ['html',
+            'css',
+            'js',
+            'mysql',
+            'mongodb',
+            'react',
+            'angular',
+            'aws',
+            'docker',
+            'git',
+            'node.js',
+            'python',
+            'java'],
+        logo: '',
+        price: 0,
+        rating: 4.772,
+        avgResult: 100
+    },
+    {
+        title: 'Frontend',
+        monthDuration: 4,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass'],
+        logo: '',
+        price: 0,
+        rating: 4.53,
+        avgResult: 90
+    }
+];
+
+
+    if (courses[0].monthDuration > 5){
+        console.log(courses[0].title, 'supper');
+    }
+    if (courses[1].monthDuration > 5){
+    console.log(courses[1].title, 'supper');
+    }
+    if (courses[2].monthDuration > 5){
+    console.log(courses[2].title, 'supper');
+    }
+    if (courses[3].monthDuration > 5){
+    console.log(courses[3].title, 'supper');
+    }
+    if (courses[4].monthDuration > 5){
+    console.log(courses[4].title, 'supper');
+    }
+    if (courses[5].monthDuration > 5){
+    console.log(courses[5].title, 'supper');
+    }

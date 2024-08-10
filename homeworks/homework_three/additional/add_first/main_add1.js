@@ -32,33 +32,140 @@ let numbers = [2,17,13,6,22,31,45,66,100,-18];
 console.log('*********************');
 
 //     2. перебрати його циклом for
-let numbers1 = [2,17,13,6,22,31,45,66,100,-18];
 
-for (let i = 0; i < numbers1.length; i++) {
-    const number = numbers1[i];
+
+for (let i = 0; i < numbers.length; i++) {
+    const number = numbers[i];
     console.log(number);
 }
 console.log('*********************');
 //     3. перебрати циклом while та вивести  числа тільки з непарним індексом
+let zero = 0;
+while(zero < numbers.length){
+    if(zero % 2 === 0){
+        console.log(numbers[zero]);
+    }
+    zero++;
+}
+console.log('***********');
 // 4. перебрати циклом for та вивести  числа тільки з непарним індексом
+for (let i = 0; i < numbers.length; i++) {
+    const number = numbers[i];
+    if(i % 2 === 0){
+        console.log(number);
+    }
+}
+console.log('****************')
 // 5. перебрати циклом while та вивести  числа тільки парні  значення
-let numbers2 = [2,17,13,6,22,31,45,66,100,-18];
+
 let y = 0;
-while (y <numbers2.length){
-    if(y % 2 !== 0){
-        console.log(numbers2[y]);
+while (y <numbers.length){
+    if(numbers[y] % 2 !== 0){
+        console.log(numbers[y]);
     }
     y++;
 }
+console.log('****************');
 // 6. перебрати циклом for та вивести  числа тільки парні  значення
-// 7. замінити кожне число кратне 3 на слово "okten"
-// 8. вивести масив в зворотньому порядку.
-// 9. всі попередні завдання (окрім 8), але в зворотньому циклі (с заду на перед)
+for (let i = 0; i < numbers.length; i++) {
+    const number = numbers[i];
+    if (numbers[i] % 2 === 0){
+        console.log(number);
+    }
+}
+console.log('*******************');
 
+// 7. замінити кожне число кратне 3 на слово "okten"
+for (let i = 0; i < numbers.length; i++) {
+    const number = numbers[i];
+    if (number % 3 === 0){
+        numbers[i] = 'okten';
+    }
+    console.log(number)
+}
+console.log('******************');
+// 8. вивести масив в зворотньому порядку.
+for (let i = numbers.length - 1; i >= 0; i--) {
+    const number = numbers[i];
+    console.log(number);
+}
+
+
+// 9. всі попередні завдання (окрім 8), але в зворотньому циклі (с заду на перед)
+//reverse
+let arrayOfNumbers =[2,17,13,6,22,31,45,66,100,-18];
+
+console.log('first one**************');
+
+for (let i = arrayOfNumbers.length - 1; i >= 0; i--) {
+    const number = arrayOfNumbers[i];
+    console.log(number);
+}
+console.log('second one**************');
+
+let reverse1 =arrayOfNumbers.length;
+while(reverse1--){
+    console.log(arrayOfNumbers[reverse1]);
+}
+console.log('third one***************');
+
+let reverse2 = arrayOfNumbers.length;
+while(reverse2 --){
+    if(reverse2 % 2 === 0){
+        console.log(arrayOfNumbers[reverse2]);
+    }
+}
+console.log('forth one*************');
+for (let i = arrayOfNumbers.length - 1; i >= 0; i--) {
+    const item = arrayOfNumbers[i];
+    if (i % 2 !== 0){
+        console.log(item);
+    }
+}
+console.log('fifth one********');
+
+let reverse3 = arrayOfNumbers.length;
+while(reverse3-- ){
+    if(arrayOfNumbers[reverse3] % 2 === 0){
+        console.log(arrayOfNumbers[reverse3]);
+    }
+}
+console.log('sixth one*********');
+for (let i = arrayOfNumbers.length - 1; i >= 0; i--) {
+    const item = arrayOfNumbers[i];
+        if(item % 2 === 0){
+            console.log(item);
+        }
+}
+console.log('seventh one**************');
+for (let i = 0; i < arrayOfNumbers.length; i++) {
+    const arrayOfNumber = arrayOfNumbers[i];
+    if(arrayOfNumber % 3 !== 0){
+        arrayOfNumbers[i] = 'okten';
+    }
+}
+console.log(arrayOfNumbers);
+console.log('************');
 // - Створити масив з 10 числових елементів. Вивести в консоль всі його елементи в циклі.
+let arrayNum = [1,2,3,4,5,6,7,8,9,10];
+for (const number of arrayNum) {
+    console.log(number);
+}
+console.log('*******************');
 // - Створити масив з 10 строкрових елементів. Вивести в консоль всі його елементи в циклі.
+let arrayStr = ['aaaaaaaa','bbbbbbbb','cccccccccc','dddddddddd','eeeeeeeeeeeeeeee','ffffffffff','gggggggggg','gg','f','a'];
+for (const string of arrayStr) {
+    console.log(string);
+}
+console.log('*******************');
 // - Створити масив з 10 елементів будь-якого типу. Вивести в консоль всі його елементи в циклі.
+let anyM = [true,false,'lol',1,5,false,'bbb',255,true,'gg'];
+for (const anything of anyM) {
+    console.log(anything);
+}
+console.log('****************');
 // - Створити масив з 10 елементів числового, стірчкового і булевого типу. За допомогою if та typeof вивести тільки булеві елементи
+
  let anyType = [true,false,'fffff',1,2,3,'dfdsf',false,true];
 for (const element of anyType) {
     if (typeof element === "boolean"){
@@ -66,26 +173,72 @@ for (const element of anyType) {
     }
 }
 console.log('******************');
+
+
 // - Створити масив з 10 елементів числового, стірчкового і булевого типу. За допомогою if та typeof вивести тільки числові елементи
+
+
 for (const element of anyType) {
     if (typeof element === "string"){
         console.log(element);
     }
 }
 console.log('*******************');
+
+
 // - Створити масив з 10 елементів числового, стрічкового і булевого типу. За допомогою if та typeof вивести тільки рядкові елементи
+
+
 for (const element of anyType) {
     if (typeof element === "number"){
         console.log(element);
     }
 }
-
 // - Створити порожній масив. Наповнити його 10 елементами (різними за типами) через звернення до конкретних індексів. Вивести в консоль всі його елементи в циклі.
+let emptyArr = [];
+emptyArr[0] = 'okten';
+emptyArr[1] = 'I got';
+emptyArr[2] = 'what do you';
+emptyArr[3] = 'want from';
+emptyArr[4] = 'me';
+emptyArr[5] = 'in this';
+emptyArr[6] = 'task';
+emptyArr[7] = 'ave okten';
+emptyArr[8] = 'difficult';
+emptyArr[9] = 'to fill it by hands';
+console.log(emptyArr);
 // - Створити цикл for на 10  ітерацій з кроком 1. Вивести поточний номер кроку через console.log та document.write
+for (let i = 1; i < 11 ; i++) {
+    document.write(`<div>${i}</div>`);
+    console.log(i);
+
+}
 // - Створити цикл for на 100 ітерацій з кроком 1. Вивести поточний номер кроку через console.log та document.write
+for (let i = 1; i < 101; i++) {
+     document.write(`<div>${i}</div>`);
+    console.log(i);
+
+}
 // - Створити цикл for на 100 ітерацій з кроком 2. Вивести поточний номер кроку через console.log та document.write
+for (let i = 2; i < 101; i++) {
+    document.write(`<div>${i}</div>`);
+    console.log(i);
+
+}
 // - Створити цикл for на 100 ітерацій. Вивести тільки парні кроки. через console.log + document.write
+for (let i = 1; i < 101; i++) {
+    if (i % 2 === 0){
+        document.write(`<div>${i}</div>`);
+        console.log(i);
+    }
+}
 // - Створити цикл for на 100 ітерацій. Вивести тільки непарні кроки. через console.log + document.write
+for (let i = 1; i < 101; i++) {
+    if (i % 2 !== 0){
+        document.write(`<div>${i}</div>`);
+        console.log(i);
+    }
+}
 
 
 

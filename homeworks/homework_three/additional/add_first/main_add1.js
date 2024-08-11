@@ -241,9 +241,20 @@ for (let i = 1; i < 101; i++) {
 }
 
 
-
 // стоврити масив книжок (назва, кількість сторінок, автори , жанри).
+let books = [
+    {title:'book1',pages:2345,authors:['lenni Greghem','Homer Simpson','Bart Simpson'],genres:'aaa'},
+    {title:'book2',pages:5444,authors:['Marge Simpson','Braian Grifin','Moe','Lisa Simpson'],genres:'dddd'},
+    {title:'book3',pages:1123,authors:['Kartmen','Squbi Doo','Din Winchester'],genres:'ccccc'},
+    {title:'book4',pages:134,authors:['Sam Winchester'],genres:'ddddd'},
+    {title:'book5',pages:2312,authors:['Io','padge'],genres:'eeeeee'},
+    {title:'book6',pages:765,authors:['lenni Greghem'],genres:'fffffff'},
+    {title:'book7',pages:4327,authors:['lenni Greghem'],genres:'gggggg'},
+]
 // -знайти наібльшу книжку.
+
+
+
 // - знайти книжку/ки з найбільшою кількістю жанрів
 // - знайти книжку/ки з найдовшою назвою
 // - знайти книжку/ки які писали 2 автори

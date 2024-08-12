@@ -211,20 +211,20 @@ console.log(emptyArr);
 for (let i = 1; i < 11 ; i++) {
     document.write(`<div>${i}</div>`);
     console.log(i);
-
 }
+console.log('***********************');
 // - Створити цикл for на 100 ітерацій з кроком 1. Вивести поточний номер кроку через console.log та document.write
 for (let i = 1; i < 101; i++) {
      document.write(`<div>${i}</div>`);
     console.log(i);
-
 }
+console.log('***************************2');
 // - Створити цикл for на 100 ітерацій з кроком 2. Вивести поточний номер кроку через console.log та document.write
-for (let i = 2; i < 101; i++) {
+for (let i = 2; i < 101; i+= 2) {
     document.write(`<div>${i}</div>`);
     console.log(i);
-
 }
+console.log('********************************2');
 // - Створити цикл for на 100 ітерацій. Вивести тільки парні кроки. через console.log + document.write
 for (let i = 1; i < 101; i++) {
     if (i % 2 === 0){
@@ -232,6 +232,7 @@ for (let i = 1; i < 101; i++) {
         console.log(i);
     }
 }
+console.log('****************************');
 // - Створити цикл for на 100 ітерацій. Вивести тільки непарні кроки. через console.log + document.write
 for (let i = 1; i < 101; i++) {
     if (i % 2 !== 0){
@@ -239,23 +240,72 @@ for (let i = 1; i < 101; i++) {
         console.log(i);
     }
 }
-
-
+console.log('************************');
 // стоврити масив книжок (назва, кількість сторінок, автори , жанри).
 let books = [
     {title:'book1',pages:2345,authors:['lenni Greghem','Homer Simpson','Bart Simpson'],genres:'aaa'},
-    {title:'book2',pages:5444,authors:['Marge Simpson','Braian Grifin','Moe','Lisa Simpson'],genres:'dddd'},
-    {title:'book3',pages:1123,authors:['Kartmen','Squbi Doo','Din Winchester'],genres:'ccccc'},
-    {title:'book4',pages:134,authors:['Sam Winchester'],genres:'ddddd'},
-    {title:'book5',pages:2312,authors:['Io','padge'],genres:'eeeeee'},
-    {title:'book6',pages:765,authors:['lenni Greghem'],genres:'fffffff'},
-    {title:'book7',pages:4327,authors:['lenni Greghem'],genres:'gggggg'},
+    {title:'book22',pages:5444,authors:['Marge Simpson','Braian Grifin','Moe','Lisa Simpson'],genres:'dddd'},
+    {title:'book333',pages:1123,authors:['Kartmen','Squbi Doo','Din Winchester'],genres:'ccccc'},
+    {title:'book4444',pages:134,authors:['Sam Winchester'],genres:'ddddd'},
+    {title:'book55555',pages:2312,authors:['Io','padge'],genres:'eeeeee'},
+    {title:'book666666',pages:765,authors:['lenni Greghem'],genres:'fffffff'},
+    {title:'book7777777',pages:4327,authors:['lenni Greghem'],genres:'gggggg'},
 ]
 // -знайти наібльшу книжку.
-
-
+let maxArray = [];
+for (const book of books) {
+    maxArray.push(book.pages);
+}
+let max = Math.max(...maxArray);
+console.log(max);
+for (const book of books) {
+ if (max === book.pages){
+     console.log(book);
+ }
+}
+console.log('*************************');
 
 // - знайти книжку/ки з найбільшою кількістю жанрів
+//в мене тут буде з найбільшою кількістю авторів якщо ви не проти,бо я коли створював масив з обєктами трохи ключі переплутав
+let length= [];
+for (const book of books) {
+    let lengthAuthors = book.authors.length;
+    length.push(lengthAuthors);
+}
+ let maxAuthors = Math.max(...length);
+console.log(maxAuthors);
+for (const book of books) {
+    if (book.authors.length === maxAuthors){
+        console.log(book);
+    }
+}
+
+console.log('*************************');
+
 // - знайти книжку/ки з найдовшою назвою
+let arrayMaxTitle = [];
+for (const book of books) {
+    let length = book.title.length;
+    console.log(length);
+    arrayMaxTitle.push(length);
+}
+let maxTitle =  Math.max(...arrayMaxTitle);
+for (const book of books) {
+    if(book.title.length === maxTitle){
+        console.log(book)
+    }
+}
+console.log('*************************');
 // - знайти книжку/ки які писали 2 автори
+for (const book of books) {
+    if (book.authors.length === 2){
+        console.log(book)
+    }
+}
+console.log('*************************');
 // - знайти книжку/ки які писав 1 автор
+for (const book of books) {
+    if (book.authors.length === 1){
+        console.log(book)
+    }
+}

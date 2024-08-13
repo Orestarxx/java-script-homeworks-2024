@@ -68,25 +68,51 @@ arrayTaker1(arrayTest);
 // - створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та виводить їх в документ. Для кожного об'єкту окремий блок
 function userTaker (array){
     for (let i = 0; i < array.length; i++) {
-        const arrayElement = array[i];
         document.write(`<div>${array[i].id}</div>
                         <div>${array[i].age}</div>
                         <div>${array[i].name}</div>           `)
-
     }
 }
-let arr2 = [{name:'fdfdsf',age:123,id:1},{name:'olia',age:345,id:2}]
+let arr2 = [{name:'olia',age:223,id:1},{name:'olia',age:345,id:2}]
 userTaker(arr2);
 
 
 // - створити функцію яка повертає найменьше число з масиву
-//
+function minNumber (array){
+    return Math.min(...array);
+}
+ let arrayNumbers =[123,3,67,45,88,23,23,3];
+console.log(minNumber(arrayNumbers));
 // - створити функцію sum(arr) яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад sum([1,2,10]) //->13
-//
+function sumArray (array1){
+    const initialValue = 0;
+      return array1.reduce(
+        (accumulator, currentValue) => accumulator + currentValue,
+        initialValue,
+    );
+}
+console.log(sumArray(arrayNumbers));
 // - створити функцію swap(arr,index1,index2). Функція міняє місцями заняення у відповідних індексах
 // Приклад  swap([11,22,33,44],0,1) //=> [22,11,33,44]
-//
+ function swap (array,index1,index2){
+     let temp = array[index1];
+     array[index1] = array[index2];
+     array[index2] = temp;
+   return array
+ }
+
+console.log(swap(arrayNumbers,1,2));
 // - Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)
 // Приклад exchange(10000,[{currency:'USD',value:25},{currency:'EUR',value:42}],'USD') // => 400
+
+function exchange (sumUAH,currencyValues,exchangeCurrency) {
+   if(exchangeCurrency === 'USD'){
+       return  sumUAH / currencyValues[0].value
+   }else if(exchangeCurrency === 'EUR'){
+       return  sumUAH / currencyValues[1].value
+   }
+}
+
+console.log(exchange(20000, [{currency: 'USD', value: 41}, {currency: 'EUR', value: 50}], 'USD'));
 
 

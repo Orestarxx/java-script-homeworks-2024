@@ -66,12 +66,19 @@ function arrayTaker1 (array){
 let arrayTest = [true,false,'hi',1,2,3];
 arrayTaker1(arrayTest);
 // - створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та виводить їх в документ. Для кожного об'єкту окремий блок
-function userBuilder (){
+function userTaker (array){
+    for (let i = 0; i < array.length; i++) {
+        const arrayElement = array[i];
+        document.write(`<div>${array[i].id}</div>
+                        <div>${array[i].age}</div>
+                        <div>${array[i].name}</div>           `)
 
+    }
 }
-let arr2 = []
+let arr2 = [{name:'fdfdsf',age:123,id:1},{name:'olia',age:345,id:2}]
+userTaker(arr2);
 
-//
+
 // - створити функцію яка повертає найменьше число з масиву
 //
 // - створити функцію sum(arr) яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад sum([1,2,10]) //->13

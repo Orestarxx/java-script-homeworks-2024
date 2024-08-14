@@ -85,3 +85,23 @@ let countItems = (arr) =>{
     return initial;
 }
 console.log(countItems(minNum));
+// - створити функцію swap(arr,index1,index2). Функція міняє місцями заняення у відповідних індексах
+
+let swapIndex = (arr,index1,index2) =>{
+    let temp = arr[index1];
+    arr[index1] = arr[index2]
+    arr[index2] = temp
+    return arr
+}
+console.log(swapIndex(minNum, 0, 1));
+// - Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)
+// Приклад exchange(10000,[{currency:'USD',value:25},{currency:'EUR',value:42}],'USD') // => 400
+
+let exchange = (sumUAN,currencyValues,exchangeCurrency) =>{
+    for (const item of currencyValues) {
+        if (item.currency === exchangeCurrency){
+            return sumUAN / item.value;
+        }
+    }
+}
+console.log(exchange(41000, [{currency: 'USD', value: 41}, {currency: 'EUR', value: 43}], 'EUR'));

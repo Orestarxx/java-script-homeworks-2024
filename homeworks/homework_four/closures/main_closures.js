@@ -29,7 +29,7 @@ function userBuilder (id,name,age) {
     }
 }
 let builder = userBuilder(1,'vasia',24);
-builder.setAge(45);
+builder.setAge(151);
 builder.getAge()
 builder.setName('loli Pop');
 builder.getName()

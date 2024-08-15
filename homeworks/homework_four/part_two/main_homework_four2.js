@@ -1,7 +1,7 @@
 
 // - створити функцію яка обчислює та повертає площу прямокутника зі сторонами а і б
 
-let countAreaRectangle = (a,b) => a + b;
+let countAreaRectangle = (a,b) => a * b;
 console.log(countAreaRectangle(10, 20));
 
 // - створити функцію яка обчислює та повертає площу кола з радіусом r
@@ -105,3 +105,4 @@ let exchange = (sumUAN,currencyValues,exchangeCurrency) =>{
     }
 }
 console.log(exchange(41000, [{currency: 'USD', value: 41}, {currency: 'EUR', value: 43}], 'EUR'));
+

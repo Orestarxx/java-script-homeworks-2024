@@ -1,3 +1,7 @@
+// - Знайти та вивести довижину настипних стрінгових значень
+let arrayOfStings = ['hello world', 'lorem ipsum', 'javascript is cool'];
+arrayOfStings.map((item)=> console.log(item.length));
+console.log('**************');
 // - Перевести до великого регістру наступні стрінгові значення
 
 let upperAndLowerCaseStr ='hello world, lorem ipsum, javascript is cool';
@@ -10,7 +14,8 @@ let dirtyStr = ' dirty string   ';
 console.log(dirtyStr.trim());
 // Напишіть функцію stringToarray(str), яка перетворює рядок на масив слів.
     let str = 'Ревуть воли як ясла повні';
-  let stringToArray = str => arrayStr = str.split(' ');
+
+let stringToArray = str => arrayStr = str.split(' ');
   console.log(stringToArray(str));
 console.log('************');
 // - створити функцію sortNums(array,direction), яка прймає масив чисел, та сортує його від більшого до меньшого, або навпаки в залежності від значення аргументу direction.

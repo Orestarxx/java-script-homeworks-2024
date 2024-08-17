@@ -14,7 +14,7 @@ let dirtyStr = ' dirty string   ';
 console.log(dirtyStr.trim());
 // Напишіть функцію stringToarray(str), яка перетворює рядок на масив слів.
     let str = 'Ревуть воли як ясла повні';
-
+ let arrayStr;
 let stringToArray = str => arrayStr = str.split(' ');
   console.log(stringToArray(str));
 console.log('************');

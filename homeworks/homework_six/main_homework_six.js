@@ -26,6 +26,7 @@ function changeRow(array,direction) {
     }else if(direction === 'descending'){
          return  array.reverse();
     }
+    return 'name of the direction is not correct';
 }
 console.log(changeRow(nums, 'descending'));
 console.log('************');

@@ -286,7 +286,7 @@ let courses1 = [
 ];
 courses1.map((course) =>{
     for (const element of course.modules) {
-        if(element.startsWith('sass')){
+        if(element.includes('sass')){
             console.log(course);
         }
     }
@@ -294,7 +294,7 @@ courses1.map((course) =>{
 console.log('******************');
 courses1.map((course) =>{
     for (const element of course.modules) {
-        if(element.startsWith('docker')){
+        if(element.includes('docker')){
             console.log(course);
         }
     }

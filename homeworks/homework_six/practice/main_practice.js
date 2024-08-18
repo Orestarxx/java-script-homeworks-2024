@@ -119,3 +119,11 @@ for (const key in sortedByPrice) {
 }
 console.log(arr);
 
+ let result = 'name-vasia;age-31;status-true'
+     .split(';')
+     .map(value=>value.split('-'))
+     .reduce((previousValue, currentValue)=>({...previousValue,[currentValue[0]]:currentValue[1]}),{});
+console.log(result);
+
+
+

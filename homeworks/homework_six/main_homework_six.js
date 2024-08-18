@@ -14,9 +14,10 @@ let dirtyStr = ' dirty string   ';
 console.log(dirtyStr.trim());
 // Напишіть функцію stringToarray(str), яка перетворює рядок на масив слів.
     let str = 'Ревуть воли як ясла повні';
- let arrayStr;
-let stringToArray = str => arrayStr = str.split(' ');
-  console.log(stringToArray(str));
+
+let stringToArray = str => str.split(' ');
+console.log(stringToArray(str));
+
 console.log('************');
 // - створити функцію sortNums(array,direction), яка прймає масив чисел, та сортує його від більшого до меньшого, або навпаки в залежності від значення аргументу direction.
     let nums = [11,21,3,10,15,20];

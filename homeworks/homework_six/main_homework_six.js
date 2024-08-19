@@ -14,7 +14,6 @@ let dirtyStr = ' dirty string   ';
 console.log(dirtyStr.trim());
 // Напишіть функцію stringToarray(str), яка перетворює рядок на масив слів.
     let str = 'Ревуть воли як ясла повні';
-
 let stringToArray = str => str.split(' ');
 console.log(stringToArray(str));
 
@@ -57,20 +56,12 @@ coursesAndDurationArray.sort((index1,index2)=>{
 console.log(coursesAndDurationArray);
 console.log('************');
 // -- відфільтрувати , залишивши тільки курси з тривалістю більше 5 місяців
-coursesAndDurationArray.map((course)=>{
-    if(course.monthDuration > 5){
-        console.log(course);
-    }
-});
+console.log(coursesAndDurationArray.filter(course => course.monthDuration > 5));
 console.log('***************');
 // -- за допомоги map перетворити кожен елемент на наступний тип {id,title,monthDuration}
-let newCourses = coursesAndDurationArray.map((course,index)=>{
-    return {
-        id: index +1,
-        title:course.title,
-        monthDuration:course.monthDuration
-    }
-});
+let newCourses = coursesAndDurationArray.map((course,index)=>
+    ({id:index + 1,...course})
+);
 console.log(newCourses);
 
 let cards = [
@@ -137,39 +128,21 @@ let cards = [
     ];
 
 // - знайти піковий туз
-cards.map((card)=>{
-    if(card.cardSuit === 'spades' && card.value === 'Ace'){
-        console.log(card);
-    }
-});
+console.log(cards.find(card => card.cardSuit === 'spades' && card.value === 'Ace'));
 console.log('*************');
 // - всі шістки
-cards.map((card)=>{
-    if(card.value === 6){
-        console.log(card);
-    }
-});
+console.log(cards.filter(card => card.value === 6));
 console.log('*****************');
 // - всі червоні карти
-cards.map((card)=>{
-    if (card.color === 'red'){
-        console.log(card);
-    }
-});
+console.log(cards.filter(card => card.color === 'red'));
 console.log('*****************');
 // - всі буби
-cards.map((card)=>{
-    if(card.cardSuit === 'diamonds'){
-        console.log(card);
-    }
-});
+console.log(cards.filter(card => card.cardSuit === 'diamonds'));
+
 console.log('*****************');
 // - всі трефи від 9 та більше
-cards.map((card,index)=>{
-    if(card.cardSuit === 'clubs' && index > 7){
-        console.log(card);
-    }
-});
+console.log(cards.filter((card,index) => card.cardSuit === 'clubs' && index > 6 ));
+
 console.log('************');
 // Взяти описану колоду карт, та за допомоги reduce упакувати всі карти по "мастях" в об'єкт
 

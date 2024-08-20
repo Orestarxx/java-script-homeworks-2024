@@ -144,6 +144,22 @@ console.log(girls.filter(girl => girl.legSize === prince.foundShoe));
 console.log(girls.find(girl => girl.name === 'Popelushka'));
 
 // *Через Array.prototype. створити власний foreach, filter
- Array.prototype.iterator = function () {
-     
+ Array.prototype.iterator = function (callBack) {
+     const array = this;
+     for (const item of array) {
+         callBack(item)
+     }
  }
+ girls.iterator((item) => console.log(item));
+
+ Array.prototype.finder = function (value) {
+     let generatedArray  = [];
+     let ourArray = this;
+     for (const item of ourArray) {
+         if(value(item)){
+             generatedArray.push(item)
+         }
+     }
+     return generatedArray;
+ }
+console.log(girls.finder((girl) => girl.legSize === prince.foundShoe));

@@ -57,16 +57,27 @@ for (let i = 0; i < array.length; i+= 3) {
     }
 
 }
+console.log('**************')
+let neighbourArray = [ 1, 2, 3, 5, 7, 9, 56, 8, 67];
+let oddArray = [];
 // 4. Вивести за допомогою console.log кожен третій елемен тільки якщо цей елемент є парним та записати їх в новий масив
+for (let i = 0; i < neighbourArray.length; i += 3) {
+    const item = neighbourArray[i];
+    if(item % 2 === 0){
+        oddArray.push(item)
+    }
+}
+console.log(oddArray);
 // 5. Вивести кожен елемент масиву, сусід справа якого є парним
 // EXAMPLE: [ 1, 2, 3, 5, 7, 9, 56, 8, 67 ] -> Має бути виведено 1, 9, 56
-let neighbourArray = [ 1, 2, 3, 5, 7, 9, 56, 8, 67];
+
 for (let i = 0; i < neighbourArray.length; i++) {
     if(neighbourArray[i] % 2 === 0){
-
         console.log(neighbourArray[i])
         }
 }
+
+console.log('***********')
 // 6. Є масив з числами [100,250,50,168,120,345,188], Які характеризують вартість окремої покупки. Обрахувати середній чек.
 let countChecks = [100,250,50,168,120,345,188];
 let counter = 0;

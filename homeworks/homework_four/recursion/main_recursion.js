@@ -21,3 +21,15 @@ function flatter (array){
  }
 flatter(arr);
  console.log(newArr);
+
+
+ function counter(array) {
+     let count = 0;
+     for (let i = 0; i < array.length; i++) {
+         const arrayElement = array[i];
+            count += arrayElement
+     }
+     return count
+ }
+ let arr1 = [25,25,25,25];
+ console.log(counter(arr1));

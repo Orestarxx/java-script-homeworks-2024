@@ -19,6 +19,7 @@
 // }
 
 
+
 function copy (object) {
     if(object){
     object.__proto__.array = [];
@@ -27,14 +28,10 @@ function copy (object) {
                object.__proto__.array.push(object[key]);
            }
         }
-        if(object.__proto__.array){
-           let transformed = JSON.parse(JSON.stringify(object));
-            for (const item of object.__proto__.array) {
-
-            }
-        return {...transformed,...object};
-        }
+        let transformed = JSON.parse(JSON.stringify(object));
+        return {...object,...transformed};
     }
+    return 'ERROR';
 }
 let user = {
     id:1,
@@ -50,14 +47,29 @@ let user = {
         console.log('car');
     }
 };
-
-// user.__proto__.foo = function () {console.log(this);}
+let user1 = {
+    id:1,
+    name:'Orest',
+    surName:'Hanes',
+    foo(){
+        console.log('hello world');
+    },
+    bar(){
+        console.log('hi');
+    },
+    carFo(){
+        console.log('car');
+    }
+};
+ let newUser1 = copy(user1);
+console.log(user1);
 console.log(user);
 let newUser = copy(user);
 console.log(newUser);
 newUser.foo()
 newUser.bar()
 newUser.car()
+newUser1.carFo()
 
 // - є масив
 let coursesAndDurationArray = [

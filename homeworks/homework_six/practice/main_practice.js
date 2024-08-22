@@ -125,6 +125,53 @@ console.log(arr);
      .reduce((previousValue, currentValue)=>({...previousValue,[currentValue[0]]:currentValue[1]}),{});
 console.log(result);
 
+class User {
+    constructor(id,name,age,garage) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.garage = [...garage];
+    }
+}
+User.prototype.pushCar = function (array) {
+    for (const item of array) {
+        if(item.userId === this.id){
+            this.garage.push(item)
+            item['carId'] = this.garage.length;
+        }
+    }
+}
 
+class Car {
+    constructor(userId,name,year) {
+        this.userId = userId;
+        this.name = name;
+        this.year = year
+    }
+}
 
+let user1 =new User(1,'Orest',24,[] );
+let user2 =new User(2,'Orest',24,[] );
+let user3 =new User(3,'Orest',24,[] );
+let user4 =new User(4,'Orest',24,[] );
+let user5 =new User(5,'Orest',24,[] );
 
+let users = []
+users.push(user1,user2,user3,user4,user5);
+console.log(users);
+
+let car1 =new Car(1, 'tesla',2014);
+let car2 =new Car(2, 'tesla',2014);
+let car3 =new Car(3, 'tesla',2014);
+let car4 =new Car(4, 'tesla',2014);
+let car5 =new Car(5, 'tesla',2014);
+let car6 = new Car(2,'TESLA',2020);
+let car7 = new Car(2,'ferari',2015);
+let car8 = new Car(2,'golf',2023);
+let cars = [];
+cars.push(car1,car2,car3,car4,car5,car6,car7,car8);
+
+for (const user of users) {
+    user.pushCar(cars);
+}
+console.log(users);

@@ -21,18 +21,23 @@
 
 
 
-debugger;
-function copy (object) {
-    if(object){
-    object.__proto__.array = [];
-        for (const key in object) {
-           if(typeof object[key] === 'function'){
-               object.__proto__.array.push(object[key]);
-           }
-               JSON.parse(JSON.stringify(object));
 
+function copy (object) {
+    const fooTaker = [];
+    if(object){
+        for (const key in object) {
+            if (typeof object[key] === 'function') {
+                const copied = object[key].bind({});
+                fooTaker.push({copied, key});
+            }
         }
-        return {...object};
+         let clonedObject = JSON.parse(JSON.stringify(object));
+        for (const foo of fooTaker) {
+            clonedObject[foo.key] = foo.copied;
+            console.log(foo);
+        }
+        console.log(clonedObject);
+        return clonedObject;
     }
     return 'ERROR';
 }
@@ -60,7 +65,7 @@ let user = {
 console.log(user);
 let newUser = copy(user);
 console.log(newUser);
-
+newUser.car()
 
 
 

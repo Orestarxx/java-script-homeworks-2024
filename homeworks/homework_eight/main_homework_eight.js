@@ -21,17 +21,18 @@
 
 
 
+debugger;
 function copy (object) {
     if(object){
     object.__proto__.array = [];
         for (const key in object) {
            if(typeof object[key] === 'function'){
-               object.__proto__.array.push(object[key])
+               object.__proto__.array.push(object[key]);
            }
+               JSON.parse(JSON.stringify(object));
 
         }
-        let transformed = JSON.parse(JSON.stringify(object));
-        return {...object,...transformed};
+        return {...object};
     }
     return 'ERROR';
 }
@@ -77,6 +78,9 @@ let coursesAndDurationArray = [
 let newCourses = coursesAndDurationArray.map((course,index) =>({id:index+1,...course}));
 console.log(newCourses);
 
+let user4 = {id:1}
+let user5 = {...user4}
+console.log(user5 === user4);
 
 
 

@@ -5,6 +5,7 @@
 
 //перший варіант,але він лише одну функцію переносить
 
+
 // function deepCopy(object) {
 //     if(object){
 //         for (const key in object) {
@@ -25,8 +26,9 @@ function copy (object) {
     object.__proto__.array = [];
         for (const key in object) {
            if(typeof object[key] === 'function'){
-               object.__proto__.array.push(object[key]);
+               object.__proto__.array.push(object[key])
            }
+
         }
         let transformed = JSON.parse(JSON.stringify(object));
         return {...object,...transformed};
@@ -45,31 +47,21 @@ let user = {
     },
     car(){
         console.log('car');
-    }
-};
-let user1 = {
-    id:1,
-    name:'Orest',
-    surName:'Hanes',
-    foo(){
-        console.log('hello world');
     },
-    bar(){
-        console.log('hi');
-    },
-    carFo(){
-        console.log('car');
+    barFoo(){
+
     }
+
 };
- let newUser1 = copy(user1);
-console.log(user1);
+
+
+
 console.log(user);
 let newUser = copy(user);
 console.log(newUser);
-newUser.foo()
-newUser.bar()
-newUser.car()
-newUser1.carFo()
+
+
+
 
 // - є масив
 let coursesAndDurationArray = [
@@ -84,3 +76,7 @@ let coursesAndDurationArray = [
 //     Зробити все ВИКЛЮЧНО за допомоги інлайн конструкції
 let newCourses = coursesAndDurationArray.map((course,index) =>({id:index+1,...course}));
 console.log(newCourses);
+
+
+
+

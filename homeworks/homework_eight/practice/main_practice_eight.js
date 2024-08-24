@@ -3,15 +3,15 @@ function copyObjectFactory(object) {
     if(object){
         for (const key in object) {
             if(typeof object[key] === 'function'){
-                const copiedFunctions = object[key].bind({});
-                functionsHolder.push({copiedFunctions,key});
+               const copiedFu = object[key].bind({});
+               functionsHolder.push({copiedFu,key});
             }
         }
-           let deepCopy = JSON.parse(JSON.stringify(object));
-        for (const item of functionsHolder) {
-            deepCopy[item.key] = item.copiedFunctions;
+       const deepCopyObject = JSON.parse(JSON.stringify(object));
+        for (const foo of functionsHolder) {
+            deepCopyObject[foo.key] = foo.copiedFu;
         }
-        return deepCopy
+        return deepCopyObject;
     }
     return 'error';
 }

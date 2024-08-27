@@ -3,7 +3,7 @@
 //завдання з відео
 let arrayofItems = [];
 let itemGridsItems = document.querySelectorAll('.item-grid__items');
- let arrayOfChildren = ItemGridsItems[0].children;
+ let arrayOfChildren = itemGridsItems[0].children;
 console.log(arrayOfChildren);
 
 for (let i = 1; i < arrayOfChildren.length -1; i++) {

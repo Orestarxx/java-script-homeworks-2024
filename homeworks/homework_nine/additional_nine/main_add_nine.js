@@ -14,7 +14,7 @@ for (let i = 1; i < arrayOfChildren.length -1; i++) {
     let object = {
         title:title,
         author: author,
-        mp3:mp3,
+        mp3:mp3
   }
  arrayofItems.push(object);
 }

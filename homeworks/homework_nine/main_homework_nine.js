@@ -138,16 +138,26 @@ const divHolder = document.createElement('div');
 divHolder.classList.add('divHolder');
 document.body.appendChild(divHolder);
 let div1 = document.createElement('div');
+div1.classList.add('child');
 div1.innerText = "hello1";
-div1.style.height ='200px'
+div1.style.height ='200px';
 let div2 = document.createElement('div');
+div2.classList.add('child');
 div2.innerText = "hello2";
+div2.style.height ='220px';
 let div3 = document.createElement('div');
+div3.classList.add('child');
 div3.innerText = "hello3";
+div3.style.height ='250px';
 divHolder.append(div1,div2,div3);
 console.log(divHolder);
 
+console.dir(document);
+let divHolderCollection = document.body.children[9].childNodes;
+divHolderCollection.forEach((child) =>{
+    child.style.height = div3.style.height;
 
+})
 // =========================
 
 // Цикл в циклі

@@ -151,7 +151,7 @@ div3.innerText = "hello3";
 div3.style.height ='250px';
 divHolder.append(div1,div2,div3);
 console.log(divHolder);
-
+console.log(div3.innerText);
 console.dir(document);
 let divHolderCollection = document.body.children[9].childNodes;
     let newArr = [];
@@ -264,4 +264,3 @@ coursesArray.forEach(course =>{
     courseItem.append(title,monthHourDurationHolder,ulList);//add
 
 });
-

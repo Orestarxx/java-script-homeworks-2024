@@ -140,7 +140,7 @@ document.body.appendChild(divHolder);
 let div1 = document.createElement('div');
 div1.classList.add('child');
 div1.innerText = "hello1";
-div1.style.height ='200px';
+div1.style.height ='300px';
 let div2 = document.createElement('div');
 div2.classList.add('child');
 div2.innerText = "hello2";
@@ -154,12 +154,16 @@ console.log(divHolder);
 
 console.dir(document);
 let divHolderCollection = document.body.children[9].childNodes;
+    let newArr = [];
 divHolderCollection.forEach((child) =>{
-    child.style.height = div3.style.height;
-
-})
+   let changedHeight = child.style.height.replace('px', '');
+    let numbers = +changedHeight;
+    newArr.push(numbers);
+    console.log(child.style.height);
+});
+ let max =Math.max(...newArr);
+divHolderCollection.forEach((child) =>child.style.height = ''+ max +'px');
 // =========================
-
 // Цикл в циклі
 // - Є масив coursesArray котрий лежить в arrays.js (на цей момент ви вже знаєте де він знаходиться)
 let coursesArray = [

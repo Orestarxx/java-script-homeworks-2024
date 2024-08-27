@@ -2,8 +2,8 @@
 
 //завдання з відео
 let arrayofItems = [];
-let meta = document.querySelectorAll('.item-grid__items');
- let arrayOfChildren = meta[0].children;
+let ItemGridsItems = document.querySelectorAll('.item-grid__items');
+ let arrayOfChildren = ItemGridsItems[0].children;
 console.log(arrayOfChildren);
 
 for (let i = 1; i < arrayOfChildren.length -1; i++) {

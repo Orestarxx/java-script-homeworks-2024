@@ -148,18 +148,15 @@ div2.style.height ='220px';
 let div3 = document.createElement('div');
 div3.classList.add('child');
 div3.innerText = "hello3";
-div3.style.height ='250px';
+div3.style.height ='500px';
 divHolder.append(div1,div2,div3);
-console.log(divHolder);
-console.log(div3.innerText);
-console.dir(document);
+
 let divHolderCollection = document.body.children[9].childNodes;
     let newArr = [];
 divHolderCollection.forEach((child) =>{
    let changedHeight = child.style.height.replace('px', '');
     let numbers = +changedHeight;
     newArr.push(numbers);
-    console.log(child.style.height);
 });
  let max =Math.max(...newArr);
 divHolderCollection.forEach((child) =>child.style.height = ''+ max +'px');

@@ -1,0 +1,18 @@
+form{
+    margin-bottom: 20px;
+}
+.show{
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid;
+}
+.hide{
+    display: none;
+}
+.div1, .div2, .div3{
+    width: 100px;
+    border: 1px solid;
+}

@@ -57,8 +57,8 @@ localStorage.setItem('sessionList',JSON.stringify(sessionList));
 let calculatorInput = document.getElementById('calculator');
 let result = document.getElementById('result');
 calculatorInput.oninput = function () {
-let counted = calculatorInput.value * 2.20462;
- result.innerText = counted;
+
+ result.innerText = calculatorInput.value * 2.20462;
 }
 
 // В localStorage зберігаються масиви. Вам потрібно зробити функцію, які дістає потрібний вам масив з localStorage та додає в нього об'єкт
@@ -86,4 +86,5 @@ addToLocalStorage('car',{carName:'tesla'})
 // при завантажені сторінки з'являються перші 10 об'єктів.
 //     При натисканні next виводяться наступні 10 об'єктів
 // При натисканні prev виводяться попередні 10 об'єктів
+
 

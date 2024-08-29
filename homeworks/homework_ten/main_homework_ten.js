@@ -1,9 +1,6 @@
 
 // - Створити довільний елемент з id = text та створити кнопку.Використовуючи JavaScript, зробіть так, щоб при натисканні на кнопку зникав елемент з id="text".
  let buttonSwitch = document.getElementById('switch');
-
-
-
  buttonSwitch.onclick = function () {
 document.getElementById('toggle').classList.toggle('hidden');
  }
@@ -44,24 +41,37 @@ userForm.onsubmit = function (ev){
 }
 // є сторінка, на якій є блок, я кому знаходиьтся цифра. написати код, який при кожному перезавантажені сторінки буде додавати до неї +1
 let divAdd = document.getElementById('addOne');
-
+let number = +localStorage.getItem('num');
+number++;
+localStorage.setItem('num',number);
+divAdd.innerText = number;
 
 // Є сторінка index.html (назва довільна), при відвідуванні якої в локальне сховще, в масив sessionsList зберігається інформація про дату та час відвідування сторінки. Є  сторінка sessionsListPage.html (назва довільна), при відвідуванні якої потрібно відмалювати всю інформацію про відвідування сторінки index.html. Інфу НЕ виводити в консоль, а малювати в DOM
+let sessionList = JSON.parse(localStorage.getItem('sessionList')) || [];
+sessionList.push(new Date());
+localStorage.setItem('sessionList',JSON.stringify(sessionList));
 
 
+    // створити конвертор ваги з кг в фунти. данні заповнюються через інпут. При введенні даних обрахунок стається миттєво, без натискань додаткових кнопок
 
-
-// створити конвертор ваги з кг в фунти. данні заповнюються через інпут. При введенні даних обрахунок стається миттєво, без натискань додаткових кнопок
-
+let calculatorInput = document.getElementById('calculator');
+let result = document.getElementById('result');
+calculatorInput.oninput = function () {
+let counted = calculatorInput.value * 2.20462;
+ result.innerText = counted;
+}
 
 // В localStorage зберігаються масиви. Вам потрібно зробити функцію, які дістає потрібний вам масив з localStorage та додає в нього об'єкт
 // сигнатура функції -
 // addToLocalStorage(arrayName:string,objToAdd:any{}):void
-//
 
-// Створити 3 інпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
-//     При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
-
+function addToLocalStorage(arrayName,objectToAdd) {
+    let addedArray = JSON.parse(localStorage.getItem(`${arrayName}`)) || [];
+    addedArray.push(objectToAdd);
+    localStorage.setItem(`${arrayName}`,JSON.stringify(addedArray));
+}
+addToLocalStorage('user',{name:'Ivan'});
+addToLocalStorage('car',{carName:'tesla'})
 
 
 // *** (подібне було вище, але...будьте уважні в другій частині) створити сторінку з довільним блоком, в середині якого є значення "100грн"
@@ -76,3 +86,4 @@ let divAdd = document.getElementById('addOne');
 // при завантажені сторінки з'являються перші 10 об'єктів.
 //     При натисканні next виводяться наступні 10 об'єктів
 // При натисканні prev виводяться попередні 10 об'єктів
+

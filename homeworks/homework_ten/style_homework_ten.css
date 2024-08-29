@@ -61,4 +61,15 @@
 #addOne{
     position: relative;
     top: 350px;
+    width: 100px;
+    height: 100px;
+    background-color: dodgerblue;
+}
+#calculator{
+    position: relative;
+    top: 400px;
+}
+#result{
+    position: relative;
+    top: 405px;
 }

@@ -50,8 +50,6 @@ card1.transferCredits(3000,card3);
 console.log(card1);
 card1.putCredits(20000);
 console.log(card1.getCardOptions());
-
-
 function UserAccount(name) {
      let user = {
          name:name,
@@ -67,7 +65,7 @@ function UserAccount(name) {
        getCardByKey(key){
            for (const card of user.cards) {
                if(key === card.key){
-                 return card;
+                 return JSON.parse(JSON.stringify(card));
                }
            }
        }

@@ -33,15 +33,3 @@ let arrayOfGoods = JSON.parse(localStorage.getItem('goods')) || [];
     arrayOfGoods.push(good);
  localStorage.setItem('goods',JSON.stringify(arrayOfGoods));
 });
-let array = JSON.parse(localStorage.getItem('goods'));
-console.log(array);
-for (const item of array) {
-  if(item){
-      let good = document.createElement('div');
-      good.innerHTML = `
-<h2>${item.nameOfGood}</h2>
-<p>price:${item.priceOfGood}</p>
-<img src=${item.image} alt="image"> `
-      goods.append(good);
-  }
-}

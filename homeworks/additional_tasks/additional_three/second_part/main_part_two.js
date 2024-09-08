@@ -2,10 +2,11 @@
 let arrOfGoods = JSON.parse(localStorage.getItem('goods'));
 let goodsHolder = document.createElement('div');
 let buttonClear = document.getElementById('clear');
+let holder = document.getElementById('holder');
 buttonClear.onclick = function () {
     localStorage.clear()
+  holder.innerText = ``;
 }
-let holder = document.getElementById('holder');
 console.log(holder);
 
 if(arrOfGoods){

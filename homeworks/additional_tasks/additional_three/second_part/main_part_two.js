@@ -13,7 +13,10 @@ if(arrOfGoods){
         console.log(item);
 
         let good = document.createElement('div');
-        good.innerText = `${item.nameOfGood}`;
+        good.innerText = `${item.nameOfGood}--${item.priceOfGood}`;
+        let imgOfGood = document.createElement('img');
+        imgOfGood.src = `${item.image}`;
+        good.append(imgOfGood);
         holder.append(good);
         let goodButton = document.createElement('button');
         goodButton.innerText = 'delete';
@@ -21,8 +24,8 @@ if(arrOfGoods){
         good.append(goodButton);
         goodButton.onclick = function () {
             good.remove();
-            arrOfGoods.splice(item,1);
-            localStorage.setItem('goods',JSON.stringify(arrOfGoods));
+                arrOfGoods.splice(arrOfGoods.indexOf(item),1);
+                localStorage.setItem('goods',JSON.stringify(arrOfGoods));
         }
     }
 }else{

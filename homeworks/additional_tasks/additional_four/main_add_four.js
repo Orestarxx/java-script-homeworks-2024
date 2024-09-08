@@ -23,3 +23,47 @@ function remover(arr) {
 }
 remover(array);
 console.log(array);
+// - Напишіть функцію insert_dash(str), яка приймає рядок str як аргумент і вставляє тире (-) між словами. При цьому всі символи рядка необхідно перевести у верхній регістр.
+//     let str = "HTML JavaScript PHP";
+// document.writeln(insert_dash(str)); // 'HTML-JAVASCRIPT-PHP'
+let string = "HTML JavaScript PHP";
+
+function strReform(str) {
+    let upper = str.toUpperCase()
+    return upper.replaceAll(' ','-');
+}
+ let neStr =strReform(string);
+console.log(neStr);
+
+// - Напишіть функцію, яка приймає рядок як аргумент і перетворює регістр першого символу рядка з нижнього регістру у верхній.
+//
+// - Дано список імен.
+let n1 = 'harry..Potter'
+let n2 = 'ron---Whisley'
+let n3 = 'hermione__Granger'
+// Написати функцію, яка приймає будь яке не валідне імя, та нормалізує його в наступнйи вигляд
+let arr = [];
+arr.push(n1,n2,n3);
+let newArr = []
+// let n1 = 'Harry Potter'
+// let n2 = 'Ron Whisley'
+// let n3 = 'Hermione Granger'
+function toUpper(arr,newArr) {
+    for (const item of arr) {
+        let changedName =  item.charAt(0).toUpperCase()
+         let newStr = item.replace(item.charAt(0),changedName);
+        newArr.push(newStr);
+    }
+}
+ toUpper(arr,newArr);
+console.log(newArr);
+let cleanedArr = []
+function cleaner(arr,newArr) {
+    for (const item of arr) {
+       let cleaned = item.replaceAll('-',' ').replaceAll('.',' ').replaceAll('_',' ');
+       newArr.push(cleaned);
+    }
+}
+cleaner(newArr,cleanedArr);
+console.log(cleanedArr);
+

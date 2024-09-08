@@ -66,4 +66,5 @@ function cleaner(arr,newArr) {
 }
 cleaner(newArr,cleanedArr);
 console.log(cleanedArr);
+console.log('done');
 

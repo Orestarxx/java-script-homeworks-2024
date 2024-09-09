@@ -67,4 +67,82 @@ function cleaner(arr,newArr) {
 cleaner(newArr,cleanedArr);
 console.log(cleanedArr);
 console.log('done');
+let array1 = []
+function randomizer(arr) {
+    for (let i = 0; i < 100; i++) {
+       let random =  Math.random() *100;
+       let number = Math.round(random);
+       arr.push(number);
+    }
+}
+randomizer(array1)
+console.log(array1);
+ let sortedArr = array1.sort((num1,num2) => num1 - num2);
+ let newArrSorted = []
+console.log(sortedArr);
+sortedArr.filter(item =>{
+    if(item % 2===0 && item !== 0){
+        newArrSorted.push(item);
+    }
+});
+console.log(newArrSorted);
+// - Напишіть функцію capitalize(str), яка повертає рядок, у якому кожне слово починається з великої літери.
+// - Створити функцію-валідатор для адрес електронної пошти. Перевірка повинна включати в себе :данні до знака равлика(@), наявність равлика, крапку яка знаходиться не меньше ніж на 2 символ далі після равлика, функція не чутлива до регістру (some@email.com,SOME@EMAIL.COM,some@EMAIL.com, і тд - однакові значення)
+// Протестувати на значеннях
+// someemail@gmail.com
+// someeMAIL@gmail.com
+// someeMAIL@i.ua
+// some.email@gmail.com
+let email = 'someemail@gmail.com';
+let email1 = 'someeMAIL@gmail.com';
+let email2 = 'someeMAIL@i.ua';
+let email3 = 'somee.mail@gmail.com';
 
+function capitalize(str) {
+    let change = str.charAt(0).toUpperCase();
+    return str.replace(str.charAt(0),change);
+}
+ let newOne = capitalize(email);
+let arrayOfValidatedStr = []
+arrayOfValidatedStr.push(email,email1,email2,email3);
+let validatedArr = []
+ let form = document.forms[0];
+form.addEventListener('submit',function (ev) {
+    ev.preventDefault()
+    let object = {email:form[0].value}
+validatedArr.push(object);
+
+})
+
+function validator(str,arr) {
+    if (str) {
+        if (str.endsWith('@gmail.com')) {
+            let toLowerCase = str.toLowerCase();
+            if (toLowerCase.lastIndexOf('.', 9) !== -1) {
+                let clearPoint = toLowerCase.lastIndexOf('.', 9);
+                if (clearPoint !== -1) {
+                    let newStr = toLowerCase.replace('.', '');
+                    arr.push({email:newStr});
+                }
+            } else if (toLowerCase.lastIndexOf('-', 9) !== -1) {
+                let clearDash = toLowerCase.lastIndexOf('-', 9);
+                if (clearDash !== -1) {
+                    let clearDash = toLowerCase.replace('-', '');
+                    arr.push({email:clearDash});
+                }
+            } else if (toLowerCase.lastIndexOf('_', 9) !== -1) {
+                let clearLowDash = toLowerCase.lastIndexOf('_', 9);
+                if (clearLowDash !== -1) {
+                    let lowDash = toLowerCase.replace('_', '');
+                    arr.push({email:lowDash});
+                }
+            }else{
+                arr.push({email:toLowerCase})
+            }
+        }
+    }
+}
+validator(email3,validatedArr);
+validator(email,validatedArr);
+validator(email1,validatedArr)
+console.log(validatedArr);
